@@ -1,0 +1,312 @@
+@import "./btn-variables";
+
+.comp-lib {
+    &.ilo-btn {
+        font-family: inherit;
+        color: white;
+        background-color: var(--background);
+        font-size: var(--text-size);
+        padding: var(--padding);
+        text-align: center;
+        border-radius: var(--radius);
+        font-weight: var(--weight);
+        border: var(--border);
+
+        &:hover,
+        &:focus {
+            outline: none;
+            border: var(--border);
+            background: padding-box;
+            background-color: var(--hover-bg);
+            box-shadow: 0 0 0 var(--shadow-width) var(--hover-bg);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        &.w-full{
+            width:100%
+        }
+        &.selected, &.active{
+            background-color: var(--selected-bg) !important;
+            color: #fff;
+            border: var(--border);
+            &:hover, &:focus{
+            box-shadow: 0 0 0 var(--shadow-width) var(--selected-bg);
+
+        }
+        }
+        &.custom {
+            min-width: 150px;
+            min-height: 50px;
+
+            @media (max-width: 768px) {
+                min-width: 120px;
+                min-height: 40px;
+                font-size: 16px;
+            }
+        }
+
+        &.check-answer,
+        &.play-again,
+        &.try-again,
+        &.reset,
+        &.shuffle,
+        &.custom {
+            background-color: var(--background);
+            border: var(--border-solid);
+
+            &:hover,
+            &:focus {
+                transition: all 0.2s;
+                background-color: var(--hover-bg);
+            }
+        }
+
+        &.check-answer,
+        &.play-again,
+        &.try-again,
+        &.reset,
+        &.shuffle {
+            background: var(--arrow-background-size);
+            background-color: var(--background);
+            border: var(--border-solid);
+            padding: var(--btn-icon-padding);
+            background-repeat: no-repeat;
+            background-position: 20px;
+            background-size: 25px;
+
+            &:hover,
+            &:focus {
+                //for secondary only
+                //border:3px solid #eceff0 !important;
+                transition: all 0.2s;
+                background-color: var(--hover-bg);
+            }
+        }
+
+        &.check-answer {
+            padding: 10px 15px 10px 55px;
+            background-position: 15px;
+            background-image: var(--btn-check-icon);
+
+            &.disabled {
+                background-image: var(--btn-check-icon-disabled);
+            }
+        }
+
+        &.play-again,
+        &.try-again {
+            padding: 10px 15px 10px 55px;
+        }
+
+
+        &.play-again,
+        &.reset,
+        &.try-again {
+            background-image: var(--btn-reset);
+        }
+
+        &.shuffle {
+            background-image: var(--btn-shuffle);
+        }
+
+        // Circular buttons
+        &.flip,
+        &.arrow-btn-left,
+        &.arrow-btn-right,
+        &.arrow-btn-up,
+        &.arrow-btn-down,
+        &.settings-btn {
+            position: relative;
+            display: inline-block;
+            width: 54px;
+            height: 54px;
+            background: var(--arrow-background-size);
+            border-radius: 30px;
+            z-index: 1;
+            background-color: var(--background);
+            border: var(--border-solid);
+            background-position: center;
+
+            &:hover,
+            &:focus {
+                box-shadow: 0 0 0 3px var(--hover-bg);
+                outline: none;
+                background-color: var(--hover-bg);
+            }
+        }
+
+        &.flip,
+        &.audio-btn-play,
+        &.audio-btn-pause {
+            min-width: 0 !important;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+            display: inline-block;
+            width: 55px;
+            height: 55px;
+            background-color: var(--background);
+            // padding: var(--btn-padding);
+            border: var(--border-solid);
+
+            &:hover,
+            &:focus {
+                box-shadow: 0 0 0 3px var(--hover-bg);
+                outline: none;
+                background-color: var(--hover-bg);
+            }
+        }
+
+        &.flip {
+            background-image: var(--btn-flip);
+            padding: 1px 6px;
+            background-size: 45px;
+            background-position: 4px !important;
+        }
+
+        &.audio-btn-play {
+            background-image: var(--btn-play);
+        }
+
+        &.audio-btn-pause {
+            background-image: var(--btn-pause);
+        }
+
+        &.arrow-btn-left {
+            background-image: var(--btn-left);
+            // padding: 20px;
+        }
+
+        &.arrow-btn-right {
+            background-image: var(--btn-right);
+            // padding: 20px;
+        }
+        &.arrow-btn-up {
+            background-image: var(--btn-left);
+            transform: rotate(90deg);
+        }
+        &.arrow-btn-down {
+            background-image: var(--btn-right);
+            transform: rotate(90deg);
+        }
+        &.settings-btn {
+            background-image: var(--btn-settings);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 70%;
+        }
+        &:disabled {
+            background-color: var(--bg-disable) !important;
+            color: #ccc;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none !important;
+        }
+    }
+
+    button.sec-nba.ilo-btn,
+    button.elem-nba.ilo-btn {
+        &:hover {
+            background-color: #8b2331;
+            box-shadow: 0 0 0 2px #8b2331;
+        }
+
+        &:focus:hover {
+            background-color: #8b2331;
+            outline: none !important;
+            box-shadow: 0 0 0 4px #8b2331;
+        }
+    }
+
+    button.elem-nba.ilo-btn {
+
+        &.check-answer,
+        &.play-again,
+        &.reset,
+        &.shuffle {
+            &.disabled {
+                background-color: #1d428a;
+                color: #fff;
+                opacity: 0.6;
+            }
+        }
+    }
+
+    button.sec-nba.ilo-btn {
+
+        &.play-again,
+        &.reset,
+        &.shuffle {
+            min-width: 145px;
+        }
+
+        &.check-answer,
+        &.play-again,
+        &.reset,
+        &.shuffle {
+            &.disabled {
+                background-color: #929ba3;
+                color: rgb(255, 255, 255, 0.7);
+            }
+        }
+
+        &.play-again {
+            background-position: 15px;
+        }
+
+        // Circular buttons
+        &.flip,
+        &.audio-btn-play,
+        &.audio-btn-pause,
+        &.arrow-btn-left,
+        &.arrow-btn-right,
+        &.arrow-btn-up,
+        &.arrow-btn-down,
+        &.settings-btn {
+            padding: 0;
+        }
+    }
+
+    button.elem.ilo-btn {
+
+        &.play-again,
+        &.reset,
+        &.shuffle {
+            min-width: 145px;
+        }
+
+        &.flip,
+        &.audio-btn-play,
+        &.audio-btn-pause,
+        &.arrow-btn-left,
+        &.arrow-btn-right,
+        &.arrow-btn-up,
+        &.arrow-btn-down,
+        &.settings-btn {
+            &:hover,
+            &:focus {
+                box-shadow: 0 0 0 3px var(--hover-bg);
+            }
+        }
+    }
+
+    button.sec.ilo-btn {
+        &.arrow-btn-left,
+        &.arrow-btn-right,
+        &.arrow-btn-up,
+        &.arrow-btn-down,
+        &.settings-btn {
+            padding: 0;
+    
+            &:not(:disabled):hover,
+            &:not(:disabled):focus {
+                box-shadow: 0 0 0 3px var(--hover-bg);
+            }
+    
+            &:disabled {
+                box-shadow: none;
+            }
+        }
+    }
+}

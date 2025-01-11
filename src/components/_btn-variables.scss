@@ -1,0 +1,114 @@
+.comp-lib{
+    &.elem {
+        --background: #7d1863;
+        --selected-bg: #64054c;
+        --text-size: 20px;
+        --weight: unset;
+        --padding: 10px 15px;
+        --radius: 10px;
+        --border: 5px solid rgba(0, 0, 0, 0);
+        --border-solid: 3px solid white;
+        --hover-bg: #3d0c30;
+        --bg-disable: rgba(125, 24, 99, 0.5);
+        --shadow-width: 3px;
+        --bg-size: auto;
+        --disable-bg: rgba(125, 24, 99, 0.5);
+        --btn-icon-padding: 10px 5px 10px 35px;
+        --arrow-background-size: no-repeat 50%/100% 100%;
+        --btn-check-icon: url("./assets/elem-check-button.svg");
+        --btn-check-icon-disabled: url("./assets/elem-check-button-disabled.svg");
+        --btn-reset: url("./assets/elem-play-again.svg");
+        --btn-shuffle: url("./assets/shuffle-icon.svg");
+        --btn-flip: url("./assets/flip-icon.svg");
+        --btn-play: url("./assets/elem-audio-play.svg");
+        --btn-pause: url("./assets/elem-audio-pause.svg");
+        --btn-left: url("./assets/elem-left-arrow.svg");
+        --btn-right: url("./assets/elem-right-arrow.svg");
+        --btn-settings: url("./assets/settings-icon.svg");
+    }
+    
+    &.sec {
+        --background: #064c6a;
+        --selected-bg: #072b3a;
+        --text-size: 20px;
+        --weight: bold;
+        --padding: 10px 20px;
+        --radius: 30px;
+        --border: 5px solid rgba(0, 0, 0, 0);
+        --border-solid: 3px solid white;
+        --hover-bg: #003c5c;
+        --bg-disable: rgba(6, 76, 106, 0.5);
+        --shadow-width: 3px;
+        --bg-size: auto;
+        --disable-bg: rgba(6, 76, 106, 0.5);
+        --btn-icon-padding: 10px 15px 10px 55px;
+        --arrow-background-size: no-repeat 50%/75% 100%;
+        --btn-check-icon: url("./assets/sec-check-button.svg");
+        --btn-check-icon-disabled: url("./assets/sec-check-button-disabled.svg");
+        --btn-reset: url("./assets/sec-play-again.svg");
+        --btn-shuffle: url("./assets/shuffle-icon.svg");
+        --btn-flip: url("./assets/flip-icon.svg");
+        --btn-play: url("./assets/sec-audio-play.svg");
+        --btn-pause: url("./assets/sec-audio-pause.svg");
+        --btn-left: url("./assets/sec-left-arrow.svg");
+        --btn-right: url("./assets/sec-right-arrow.svg");
+        --btn-settings: url("./assets/settings-icon.svg");
+    }
+    
+    &.sec-nba {
+        --background: #333d47;
+        --selected-bg: #242e38;
+        --text-size: 20px;
+        --weight: bold;
+        // --padding: 6px 20px;
+        --padding: 10px 20px;
+    
+        --radius: 30px;
+        --border: 3px solid rgba(0, 0, 0, 0);
+        --border-solid: 3px solid white;
+        --hover-bg: #333d47;
+        --arrow-background-size: no-repeat 50%/75% 100%;
+        --shadow-width: 3px;
+        --bg-size: 22px;
+        --disable-bg: rgba(204, 204, 204, 0.5);
+        --btn-icon-padding: 10px 15px 10px 55px;
+        --btn-check-icon: url("./assets/sec-check-button.svg");
+        --btn-check-icon-disabled: url("./assets/sec-check-button-disabled.svg");
+        --btn-reset: url("./assets/sec-play-again.svg");
+        --btn-shuffle: url("./assets/shuffle-icon.svg");
+        --btn-flip: url("./assets/flip-icon.svg");
+        --btn-play: url("./assets/sec-audio-play.svg");
+        --btn-pause: url("./assets/sec-audio-pause.svg");
+        --btn-left: url("./assets/sec-left-arrow.svg");
+        --btn-right: url("./assets/sec-right-arrow.svg");
+        --btn-settings: url("./assets/settings-icon.svg");
+    }
+    
+    &.elem-nba {
+        --background: #1d428a;
+        --selected-bg: #102d66;
+        --text-size: 20px;
+        --weight: unset;
+        --padding: 6px 20px;
+        --radius: 10px;
+        --border: 3px solid rgba(0, 0, 0, 0);
+        --border-solid: 3px solid white;
+        --arrow-background-size: no-repeat 50%/100% 100%;
+        --hover-bg: #3d0c30;
+        --shadow-width: 2px;
+        --bg-size: 25px;
+        --disable-bg: rgba(204, 204, 204, 0.5);
+        --btn-icon-padding: 10px 15px 10px 55px;
+        --btn-check-icon: url("./assets/elem-check-button.svg");
+        --btn-check-icon-disabled: url("./assets/elem-check-button-disabled.svg");
+        --btn-reset: url("./assets/elem-play-again.svg");
+        --btn-shuffle: url("./assets/shuffle-icon.svg");
+        --btn-flip: url("./assets/flip-icon.svg");
+        --btn-play: url("./assets/elem-audio-play.svg");
+        --btn-pause: url("./assets/elem-audio-pause.svg");
+        --btn-left: url("./assets/elem-left-arrow.svg");
+        --btn-right: url("./assets/elem-right-arrow.svg");
+        --btn-settings: url("./assets/settings-icon.svg");
+    }
+    
+}

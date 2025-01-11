@@ -1,0 +1,89 @@
+.simulator-viewer {
+    position: relative;
+    display: flex;
+    flex-basis: 80%;
+    overflow: hidden;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    
+    .crosshair {
+        z-index: 2;
+        .horizontal-line,
+        .vertical-line {
+            position: absolute;
+            background-color: white;
+        }
+
+        .horizontal-line {
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background-color: #000000;
+
+        }
+
+        .vertical-line {
+            width: 2px;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000000;
+        }
+
+        .scale {
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            grid-template-rows: 1fr 20px;
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+            z-index: 2;
+
+            .scale-mark {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                grid-row: 1;
+                position: relative;
+                transform: translatey(5%);
+
+                .mark {
+                    width: 2px;
+                    height: 15px;
+                    background-color: black;
+                    color: black;
+                }
+
+                .label {
+                    font-size: 1.5rem;
+                    margin-top: 5px;
+                    text-align: center;
+                    color: black;
+                }
+            }
+
+            .scale-mark:nth-child(6) .mark {
+                grid-column: span 2;
+            }
+        }
+    }
+    img{
+        padding-bottom: 0px;
+        pointer-events: none;
+    }
+    .slide-img{
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 1px;
+        max-width: 99%;
+        width: 100%;
+    }
+}

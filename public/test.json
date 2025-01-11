@@ -1,0 +1,86 @@
+{
+    "title": "Sample title for ILO",
+    "instructions": "Enter instructions here",
+    "department": "sec",
+    "scaleColor": "red",
+    "basePath": "../assets/img/",
+    "slides": [
+      {
+        "magnifications": [
+          {
+            "title": "40x",
+            "thumbnail": "tmb_onion_skin_40x.png",
+            "thumbnailAlt": "",
+            "img": "onion_01.png",
+            "imgAlt": "test"
+          },
+          {
+            "title": "100x",
+            "thumbnail": "tmb_onion_skin_100x.png",
+            "thumbnailAlt": "",
+            "img": "onion_02.png",
+            "imgAlt": "test"
+          },
+          {
+            "title": "1000x",
+            "thumbnail": "tmb_onion_skin_400x.png",
+            "thumbnailAlt": "",
+            "img": "onion_03.png",
+            "imgAlt": "test"
+          }
+        ],
+        "slideDetails": "information about slide"
+      },
+      {
+        "magnifications": [
+          {
+            "title": "40x",
+            "thumbnail": "tmb_skin_40x.png",
+            "thumbnailAlt": "",
+            "img": "skin_cells.png",
+            "imgAlt": "test"
+          }
+        ],
+        "slideDetails": "information about slide"
+      },
+      {
+        "magnifications": [
+          {
+            "title": "40x",
+            "thumbnail": "tmb_bone_40x.png",
+            "thumbnailAlt": "",
+            "img": "bone_40x.png",
+            "imgAlt": "test"
+          }
+        ],
+        "slideDetails": "information about slide"
+      },
+      {
+        "magnifications": [
+          {
+            "title": "100x",
+            "thumbnail": "tmb_nerve_100x.png",
+            "thumbnailAlt": "",
+            "img": "nerve_cells.png",
+            "imgAlt": "test"
+          }
+        ],
+        "slideDetails": "information about slide"
+      }
+    ],
+    "procedure": [
+      "Turn the light on under your microscope.",
+"Load the the human red blood cell slide by selecting a slide button. This is an example of an animal cell.",
+
+"Use the coarse-adjustment knob to focus the slide as best you can.",
+"Then use the fine-adjustment knob to bring the image into sharp focus. You are actually viewing many red blood cells.",
+"Select the 100 x magnification (100×).",
+"Use the coarse-adjustment knob to focus the slide as best you can.",
+"Then use the fine-adjustment knob to bring the image into sharp focus. You are actually viewing many red blood cells.",
+"Select the 1000 x magnification (1000×).",
+"Use the coarse-adjustment knob to focus the slide as best you can.",
+"Use the fine-adjustment knob to refocus the slide under the higher magnification.",
+"Turn on the scale and determine the field diameter at 1000×. For this microscope, the field diameter at 40× is 2 mm. To simplify your calculation, assume that the ocular scale occupies the whole field diameter so that the 10 ocular scale divisions equal 2 mm under 40×.",
+"On a piece of paper, make a biological drawing of a red blood cell as seen through the microscope under 1000× magnification. Because red blood cells are so small, you will not be able to see many internal cell details at this magnification, so just draw what you can see. Estimate the size of the cell."
+    ]
+  }
