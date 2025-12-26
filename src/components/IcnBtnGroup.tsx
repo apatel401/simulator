@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
-import Button  from './Button'
-import { MicroSimulatorContext } from './Provider'
+import React, { useReducer } from 'react';
+import Button from './Button';
 
 interface IcnProps {
     label: string;
@@ -9,68 +8,87 @@ interface IcnProps {
     maxValue: number;
 }
 
-const IcnBtnGroup: React.FC<IcnProps> = ({ label, stepValue, minValue, maxValue }) => {
-    const context = useContext(MicroSimulatorContext)
-    const universalAction = (operation: string) => {
-        switch (label) {
-            case "diapharm":
-                if (context.brightness < minValue || context.brightness > maxValue) return;
-                context.updateContext({
-                    brightness: operation === 'increase' ? context.brightness + stepValue : context.brightness - stepValue,
-                    announcementInfo: operation === 'increase' ? "diapharm_inc" : "diapharm_dec"
-                })
-                break;
-            case "course focus":
-                if (context.blur < 0 || context.blur > maxValue) return;
-                context.updateContext({
-                    blur: operation === 'increase' ? context.blur + stepValue : context.blur - stepValue,
-                    announcementInfo: operation === 'increase' ? "course_inc" : "course_dec"
-                })
-                break;
-            case "fine focus":
-                if (context.blur < 0 || context.blur > maxValue) return;
-                context.updateContext({
-                    blur: operation === 'increase' ? context.blur + stepValue : context.blur - stepValue,
-                    announcementInfo: operation === 'increase' ? "fine_inc" : "fine_dec"
-                })
-                break;
-            default:
-                break;
-        }
+interface State {
+    brightness: number;
+    blur: number;
+    announcementInfo: string;
+    light: boolean;
+    scale: boolean;
+}
+
+type Action =
+    | { type: 'INCREASE_BRIGHTNESS'; step: number }
+    | { type: 'DECREASE_BRIGHTNESS'; step: number }
+    | { type: 'INCREASE_BLUR'; step: number }
+    | { type: 'DECREASE_BLUR'; step: number };
+
+const initialState: State = {
+    brightness: 0,
+    blur: 0,
+    announcementInfo: '',
+    light: true,
+    scale: true,
+};
+
+const reducer = (state: State, action: Action): State => {
+    switch (action.type) {
+        case 'INCREASE_BRIGHTNESS':
+            return {
+                ...state,
+                brightness: Math.min(state.brightness + action.step, 100), // Assuming 100 as max value for brightness
+                announcementInfo: 'diapharm_inc',
+            };
+        case 'DECREASE_BRIGHTNESS':
+            return {
+                ...state,
+                brightness: Math.max(state.brightness - action.step, 0), // Assuming 0 as min value for brightness
+                announcementInfo: 'diapharm_dec',
+            };
+        case 'INCREASE_BLUR':
+            return {
+                ...state,
+                blur: Math.min(state.blur + action.step, 100), // Assuming 100 as max value for blur
+                announcementInfo: 'course_inc',
+            };
+        case 'DECREASE_BLUR':
+            return {
+                ...state,
+                blur: Math.max(state.blur - action.step, 0), // Assuming 0 as min value for blur
+                announcementInfo: 'course_dec',
+            };
+        default:
+            return state;
     }
+};
+
+const IcnBtnGroup: React.FC<IcnProps> = ({ label, stepValue, minValue, maxValue }) => {
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    const isBrightnessDisabled = 
+        state.brightness === maxValue && label === "diapharm";
+    const isBlurDisabled = 
+        state.blur === maxValue;
+
     return (
         <div className="button-group-container">
             <div className="button-group">
                 <Button
                     btnType="custom"
-                    department={"sec"}
-                    onClick={() => universalAction("increase")}
-                    aria-label={label + " increase button"}
-                    disabled={context.brightness === maxValue || context.blur === maxValue || (!context.light && !context.scale)}
-                    style={{ minWidth: "50px", height: "50px", width: "50px", padding: "0px" }}
+                    department="sec"
+                    onClick={() =>
+                        dispatch(
+                            label === "diapharm"
+                                ? { type: 'INCREASE_BRIGHTNESS', step: stepValue }
+                                : { type: 'INCREASE_BLUR', step: stepValue }
+                        )
+                    }
+                    aria-label={`${label} increase button`}
+                    disabled={label === "diapharm"}
+                    style={{ minWidth: "50px" }}
                 >
                     +
                 </Button>
-                <Button
-                    btnType="custom"
-                    department={"sec"}
-                    onClick={() => universalAction("decrease")}
-                    aria-label={label + " decrease button"}
-                    disabled={(context.brightness === minValue && label === "diapharm") || (context.blur < minValue && label !== "diapharm") || (!context.light && !context.scale)}
-                    style={{ minWidth: "50px", height: "50px", width: "50px", padding: "0px" }}
-                >
-                    -
-                </Button>
             </div>
-            {label && (
-                <div className='btn-label'>
-                    <label id="button-group-label" className={`button-group-label`}>
-                        {label}
-                    </label>
-                </div>
-            )}
         </div>
-    );
+);
 }
-
-export default IcnBtnGroup
